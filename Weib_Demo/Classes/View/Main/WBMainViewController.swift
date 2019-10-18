@@ -14,15 +14,17 @@ class WBMainViewController: UITabBarController {
         super.viewDidLoad()
 
         setupChildControllers()
-        
     }
-    
+   
 }
 
 extension WBMainViewController {
     private func setupChildControllers() {
         let array = [
-            ["clsName":"", "title":"首页", "imageName":""]
+            ["clsName":"WBHomeViewController", "title":"首页", "imageName":"home"],
+            ["clsName":"WBMessageViewController", "title":"消息", "imageName":"xiaoxi"],
+            ["clsName":"WBDiscoverViewController", "title":"发现", "imageName":"sousuo"],
+            ["clsName":"WBProfileViewController", "title":"我", "imageName":"wo"]
         ]
         
         var arrayM = [UIViewController]()
@@ -40,6 +42,7 @@ extension WBMainViewController {
         
         let vc = cls.init()
         vc.title = title
+        vc.tabBarItem.image = UIImage(named: imageName)
         let nav = WBNavigationViewController(rootViewController: vc)
         return nav
     }
