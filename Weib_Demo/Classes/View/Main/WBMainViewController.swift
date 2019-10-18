@@ -14,6 +14,7 @@ class WBMainViewController: UITabBarController {
         super.viewDidLoad()
 
         setupChildControllers()
+        self.tabBar.tintColor = UIColor.orange
     }
    
 }
@@ -42,7 +43,11 @@ extension WBMainViewController {
         
         let vc = cls.init()
         vc.title = title
+        //标题图片
         vc.tabBarItem.image = UIImage(named: imageName)
+        
+        //标题字体
+        vc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.orange], for: .highlighted)
         let nav = WBNavigationViewController(rootViewController: vc)
         return nav
     }
