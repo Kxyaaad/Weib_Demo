@@ -27,7 +27,7 @@ extension WBMainViewController {
     
     private func setupComposeButton() {
         let count = CGFloat(children.count)
-        let w = tabBar.bounds.width / count
+        let w = tabBar.bounds.width / count - 1
     
         composeButton.frame = tabBar.bounds.insetBy(dx: 2 * w, dy: 0)
         tabBar.addSubview(composeButton)
