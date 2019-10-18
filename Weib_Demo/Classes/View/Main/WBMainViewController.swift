@@ -14,16 +14,30 @@ class WBMainViewController: UITabBarController {
         super.viewDidLoad()
 
         setupChildControllers()
+        setupComposeButton()
         self.tabBar.tintColor = UIColor.orange
     }
+    
+    //MARK: -私有控件
+    private lazy var composeButton: UIButton = UIButton.cz_imageButton("tianjia", backgroundImageName: "tianjia")
    
 }
 
 extension WBMainViewController {
+    
+    private func setupComposeButton() {
+        let count = CGFloat(children.count)
+        let w = tabBar.bounds.width / count
+    
+        composeButton.frame = tabBar.bounds.insetBy(dx: 2 * w, dy: 0)
+        tabBar.addSubview(composeButton)
+    }
+    
     private func setupChildControllers() {
         let array = [
             ["clsName":"WBHomeViewController", "title":"首页", "imageName":"home"],
             ["clsName":"WBMessageViewController", "title":"消息", "imageName":"xiaoxi"],
+            ["clsName":"*", "title":"", "imageName":"tianjia"],
             ["clsName":"WBDiscoverViewController", "title":"发现", "imageName":"sousuo"],
             ["clsName":"WBProfileViewController", "title":"我", "imageName":"wo"]
         ]
