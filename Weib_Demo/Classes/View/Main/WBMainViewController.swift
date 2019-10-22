@@ -16,12 +16,19 @@ class WBMainViewController: UITabBarController {
         setupChildControllers()
         setupComposeButton()
         self.tabBar.tintColor = UIColor.orange
+        
     }
     
     //MARK: -私有控件
     private lazy var composeButton: UIButton = UIButton.cz_imageButton("tianjia", backgroundImageName: "tianjia")
    
+    //MARK: - 监听方法
+    @objc func composeStatus() {
+        
+    }
 }
+
+//MARK: 设置界面
 
 extension WBMainViewController {
     
@@ -31,6 +38,8 @@ extension WBMainViewController {
     
         composeButton.frame = tabBar.bounds.insetBy(dx: 2 * w, dy: 0)
         tabBar.addSubview(composeButton)
+        
+        composeButton.addTarget(self, action: #selector(composeStatus), for: .touchUpInside)
     }
     
     private func setupChildControllers() {
