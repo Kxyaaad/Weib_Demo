@@ -68,7 +68,6 @@ extension WBMainViewController {
         vc.title = title
         //标题图片
         vc.tabBarItem.image = UIImage(named: imageName)
-        
         //标题字体
         vc.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.orange], for: .highlighted)
         let nav = WBNavigationViewController(rootViewController: vc)

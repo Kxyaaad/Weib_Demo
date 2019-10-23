@@ -35,6 +35,7 @@
 		812711A82351C4AD0093EDFF /* Weib_Demo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 812711A62351C4AD0093EDFF /* Weib_Demo.xcdatamodeld */; };
 		812711AA2351C4B70093EDFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 812711A92351C4B70093EDFF /* Assets.xcassets */; };
 		812711AD2351C4B70093EDFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 812711AB2351C4B70093EDFF /* LaunchScreen.storyboard */; };
+		81C5644B2360072B00AC45AD /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C5644A2360072B00AC45AD /* WBDemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		812711A92351C4B70093EDFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		812711AC2351C4B70093EDFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		812711AE2351C4B70093EDFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81C5644A2360072B00AC45AD /* WBDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 		810BCB4C2354234E0018A5BF /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				81C564492360070200AC45AD /* 测试 */,
 				810BCB4F2354253F0018A5BF /* WBMainViewController.swift */,
 				810BCB51235425770018A5BF /* WBNavigationViewController.swift */,
 				810BCB53235425B60018A5BF /* WBBaseViewController.swift */,
@@ -257,6 +260,14 @@
 			path = Weib_Demo;
 			sourceTree = "<group>";
 		};
+		81C564492360070200AC45AD /* 测试 */ = {
+			isa = PBXGroup;
+			children = (
+				81C5644A2360072B00AC45AD /* WBDemoViewController.swift */,
+			);
+			path = "测试";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -332,6 +343,7 @@
 				810BCB7E2354480E0018A5BF /* NSObject+CZRuntime.m in Sources */,
 				810BCB54235425B60018A5BF /* WBBaseViewController.swift in Sources */,
 				812711A22351C4AD0093EDFF /* ViewController.swift in Sources */,
+				81C5644B2360072B00AC45AD /* WBDemoViewController.swift in Sources */,
 				810BCB7B2354480E0018A5BF /* NSString+CZBase64.m in Sources */,
 				810BCB87235448140018A5BF /* UIBarButtonItem+extension.swift in Sources */,
 				810BCB7F2354480E0018A5BF /* UIViewController+CZAddition.m in Sources */,

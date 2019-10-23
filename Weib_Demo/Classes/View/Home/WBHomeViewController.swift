@@ -17,14 +17,16 @@ class WBHomeViewController: WBBaseViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func showFriends() {
+        let vc = WBDemoViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
-    */
+    
+}
 
+extension WBHomeViewController {
+    override func setUpUI() {
+        view.backgroundColor = .red
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
+    }
 }
