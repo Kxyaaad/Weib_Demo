@@ -40,6 +40,7 @@ extension WBMainViewController {
         tabBar.addSubview(composeButton)
         
         composeButton.addTarget(self, action: #selector(composeStatus), for: .touchUpInside)
+        
     }
     
     private func setupChildControllers() {

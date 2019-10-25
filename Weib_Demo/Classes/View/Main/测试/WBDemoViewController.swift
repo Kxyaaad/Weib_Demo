@@ -17,7 +17,7 @@ class WBDemoViewController: WBBaseViewController {
     }
     
     @objc private func toMsg() {
-        let vc = WBMessageViewController()
+        let vc = WBDemoViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -29,3 +29,4 @@ extension WBDemoViewController{
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "消息", target: self, action: #selector(toMsg))
     }
 }
+

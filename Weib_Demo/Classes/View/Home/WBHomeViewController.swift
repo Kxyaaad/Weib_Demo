@@ -26,7 +26,7 @@ class WBHomeViewController: WBBaseViewController {
 
 extension WBHomeViewController {
     override func setUpUI() {
-        view.backgroundColor = .red
+        super.setUpUI()
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
     }
 }
