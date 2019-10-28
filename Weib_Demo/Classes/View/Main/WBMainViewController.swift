@@ -24,8 +24,16 @@ class WBMainViewController: UITabBarController {
    
     //MARK: - 监听方法
     @objc func composeStatus() {
-        
+        let vc = UIViewController()
+        vc.modalPresentationStyle = .fullScreen
+        vc.view.backgroundColor = UIColor.cz_random()
+        present(vc, animated: true, completion: nil)
     }
+    
+    open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
 }
 
 //MARK: 设置界面
