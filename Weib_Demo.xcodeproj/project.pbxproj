@@ -163,8 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				81C564492360070200AC45AD /* 测试 */,
-				810BCB4F2354253F0018A5BF /* WBMainViewController.swift */,
-				810BCB51235425770018A5BF /* WBNavigationViewController.swift */,
+				817DB5212366C4940014059C /* 主控制器 */,
 				810BCB53235425B60018A5BF /* WBBaseViewController.swift */,
 			);
 			path = Main;
@@ -258,6 +257,15 @@
 				810BCB8E23544C450018A5BF /* Weib_Demo-Bridge.h */,
 			);
 			path = Weib_Demo;
+			sourceTree = "<group>";
+		};
+		817DB5212366C4940014059C /* 主控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				810BCB4F2354253F0018A5BF /* WBMainViewController.swift */,
+				810BCB51235425770018A5BF /* WBNavigationViewController.swift */,
+			);
+			path = "主控制器";
 			sourceTree = "<group>";
 		};
 		81C564492360070200AC45AD /* 测试 */ = {
