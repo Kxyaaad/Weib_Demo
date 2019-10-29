@@ -35,6 +35,7 @@
 		812711A82351C4AD0093EDFF /* Weib_Demo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 812711A62351C4AD0093EDFF /* Weib_Demo.xcdatamodeld */; };
 		812711AA2351C4B70093EDFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 812711A92351C4B70093EDFF /* Assets.xcassets */; };
 		812711AD2351C4B70093EDFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 812711AB2351C4B70093EDFF /* LaunchScreen.storyboard */; };
+		819AED6723682777008C9B10 /* WBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819AED6623682777008C9B10 /* WBVisitorView.swift */; };
 		81C5644B2360072B00AC45AD /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C5644A2360072B00AC45AD /* WBDemoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		812711A92351C4B70093EDFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		812711AC2351C4B70093EDFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		812711AE2351C4B70093EDFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		819AED6623682777008C9B10 /* WBVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBVisitorView.swift; sourceTree = "<group>"; };
 		81C5644A2360072B00AC45AD /* WBDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,6 +164,7 @@
 		810BCB4C2354234E0018A5BF /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				819AED652368273C008C9B10 /* VisitorView */,
 				81C564492360070200AC45AD /* 测试 */,
 				817DB5212366C4940014059C /* 主控制器 */,
 				810BCB53235425B60018A5BF /* WBBaseViewController.swift */,
@@ -268,6 +271,14 @@
 			path = "主控制器";
 			sourceTree = "<group>";
 		};
+		819AED652368273C008C9B10 /* VisitorView */ = {
+			isa = PBXGroup;
+			children = (
+				819AED6623682777008C9B10 /* WBVisitorView.swift */,
+			);
+			path = VisitorView;
+			sourceTree = "<group>";
+		};
 		81C564492360070200AC45AD /* 测试 */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,6 +381,7 @@
 				810BCB56235426030018A5BF /* WBHomeViewController.swift in Sources */,
 				810BCB86235448140018A5BF /* Bundle+extension.swift in Sources */,
 				810BCB812354480E0018A5BF /* NSAttributedString+CZAdditon.m in Sources */,
+				819AED6723682777008C9B10 /* WBVisitorView.swift in Sources */,
 				810BCB7A2354480E0018A5BF /* UILabel+CZAddition.m in Sources */,
 				810BCB502354253F0018A5BF /* WBMainViewController.swift in Sources */,
 				810BCB582354263E0018A5BF /* WBMessageViewController.swift in Sources */,

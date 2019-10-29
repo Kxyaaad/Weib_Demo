@@ -53,8 +53,7 @@ extension WBBaseViewController {
     
     //添加访客视图
     @objc func setVisitorView() {
-        let visitorView = UIView(frame: view.bounds)
-        visitorView.backgroundColor = UIColor.cz_random()
+        let visitorView = WBVisitorView(frame: view.bounds)
         view.addSubview(visitorView)
     }
 }
