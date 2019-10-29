@@ -10,12 +10,14 @@ import UIKit
 
 class WBBaseViewController: UIViewController{
     
+    var isLogon = false
     
     var tableView : UITableView?
     var refreshControl: UIRefreshControl?
     
     @objc func loadData() {
-        
+        //如果子类不识闲任何方法，则关闭刷新动画
+        refreshControl?.endRefreshing()
     }
     
     override func viewDidLoad() {
@@ -29,19 +31,31 @@ class WBBaseViewController: UIViewController{
 extension WBBaseViewController {
     @objc func setUpUI() {
         view.backgroundColor = UIColor.cz_random()
+        isLogon ? setTable() : setVisitorView()
+       
+        loadData()
+    }
+    //添加表格视图
+    @objc func setTable() {
         
         tableView = UITableView(frame: CGRect(x: 0, y: UIApplication.shared.statusBarFrame.height + 44 , width: UIScreen.cz_screenWidth(), height: UIScreen.cz_screenHeight() - (UIApplication.shared.statusBarFrame.height + 44 + (tabBarController?.tabBar.frame.height)!)))
-        tableView?.delegate = self
-        tableView?.dataSource = self
-        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
-        //添加刷新攻坚
-        refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
-        tableView?.addSubview(refreshControl!)
-        
-        view.addSubview(tableView!)
-        loadData()
+               tableView?.delegate = self
+               tableView?.dataSource = self
+               tableView?.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+               
+               //添加刷新攻坚
+               refreshControl = UIRefreshControl()
+               refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
+               tableView?.addSubview(refreshControl!)
+               
+               view.addSubview(tableView!)
+    }
+    
+    //添加访客视图
+    @objc func setVisitorView() {
+        let visitorView = UIView(frame: view.bounds)
+        visitorView.backgroundColor = UIColor.cz_random()
+        view.addSubview(visitorView)
     }
 }
 

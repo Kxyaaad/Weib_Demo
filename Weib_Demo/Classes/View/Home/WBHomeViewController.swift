@@ -21,10 +21,16 @@ class WBHomeViewController: WBBaseViewController {
     }
     
     override func loadData() {
-        for i in 0..<10 {
-            statusList.insert(i.description, at: 0)
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2) {
+            for i in 0..<10 {
+                self.statusList.insert(i.description, at: 0)
+            }
+            print("刷新数据")
+            self.tableView?.reloadData()
+            self.refreshControl?.endRefreshing()
         }
-        refreshControl?.endRefreshing()
+        
     }
     
 
@@ -53,5 +59,11 @@ extension WBHomeViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         cell.textLabel?.text = statusList[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == self.statusList.count - 1 {
+            self.loadData()
+        }
     }
 }
