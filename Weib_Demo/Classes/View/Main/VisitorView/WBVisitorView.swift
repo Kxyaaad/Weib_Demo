@@ -17,7 +17,13 @@ class WBVisitorView: UIView {
                 return
             }
             
+            tipLabel.text = message
             
+            if imageName == "" {
+                return
+            }
+            
+            iconView.image = UIImage(named: imageName)
         }
     }
     override init(frame: CGRect) {
