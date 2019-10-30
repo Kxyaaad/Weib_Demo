@@ -20,7 +20,7 @@ class WBMainViewController: UITabBarController {
     }
     
     //MARK: -私有控件
-    private lazy var composeButton: UIButton = UIButton.cz_imageButton("tianjia", backgroundImageName: "tianjia")
+    private lazy var composeButton: UIButton = UIButton.cz_imageButton("tabbar_compose_icon_add", backgroundImageName: "tabbar_compose_button")
    
     //MARK: - 监听方法
     @objc func composeStatus() {
@@ -53,11 +53,11 @@ extension WBMainViewController {
     
     private func setupChildControllers() {
         let array = [
-            ["clsName":"WBHomeViewController", "title":"首页", "imageName":"home"],
-            ["clsName":"WBMessageViewController", "title":"消息", "imageName":"xiaoxi"],
+            ["clsName":"WBHomeViewController", "title":"首页", "imageName":"tabbar_home"],
+            ["clsName":"WBMessageViewController", "title":"消息", "imageName":"tabbar_message_center"],
             ["clsName":"*", "title":"", "imageName":"tianjia"],
-            ["clsName":"WBDiscoverViewController", "title":"发现", "imageName":"sousuo"],
-            ["clsName":"WBProfileViewController", "title":"我", "imageName":"wo"]
+            ["clsName":"WBDiscoverViewController", "title":"发现", "imageName":"tabbar_discover"],
+            ["clsName":"WBProfileViewController", "title":"我", "imageName":"tabbar_profile"]
         ]
         
         var arrayM = [UIViewController]()
