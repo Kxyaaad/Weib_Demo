@@ -52,12 +52,12 @@ extension WBMainViewController {
     }
     
     private func setupChildControllers() {
-        let array = [
-            ["clsName":"WBHomeViewController", "title":"首页", "imageName":"tabbar_home"],
-            ["clsName":"WBMessageViewController", "title":"消息", "imageName":"tabbar_message_center"],
-            ["clsName":"*", "title":"", "imageName":"tianjia"],
-            ["clsName":"WBDiscoverViewController", "title":"发现", "imageName":"tabbar_discover"],
-            ["clsName":"WBProfileViewController", "title":"我", "imageName":"tabbar_profile"]
+        let array : [[String:Any]] = [
+            ["clsName":"WBHomeViewController", "title":"首页", "imageName":"tabbar_home", "visitorInfo":["imageName":"", "message":"关注一些人，回来看看有什么惊喜"]],
+            ["clsName":"WBMessageViewController", "title":"消息", "imageName":"tabbar_message_center", "visitorInfo":["imageName":"visitordiscover_image_message", "message":"登录后，别人评论你的微博，发给你的消息，都会在这里收到通知"]],
+            ["clsName":"*", "title":"", "imageName":"tianjia", "visitorInfo":["imageName":"", "message":"测试"]	],
+            ["clsName":"WBDiscoverViewController", "title":"发现", "imageName":"tabbar_discover", "visitorInfo":["imageName":"visitordiscover_image_message", "message":"登录后，最新、最热微博尽在掌握，不再会与实事潮流擦肩而过"]],
+            ["clsName":"WBProfileViewController", "title":"我", "imageName":"tabbar_profile", "visitorInfo":["imageName":"visitordiscover_image_profile", "message":"登录后，你的微博、相册、个人资料会显示在这里，展示给别人"]]
         ]
         
         var arrayM = [UIViewController]()
@@ -69,12 +69,14 @@ extension WBMainViewController {
     }
     
     // parameter dict: 信息字典[clsName, title, imageName]
-    private func controller(dict:[String: String]) -> UIViewController {
-        guard let clsName = dict["clsName"], let title = dict["title"], let imageName = dict["imageName"], let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? UIViewController.Type
+    private func controller(dict:[String: Any]) -> UIViewController {
+        guard let clsName = dict["clsName"] as? String, let title = dict["title"] as? String, let imageName = dict["imageName"] as? String, let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? WBBaseViewController.Type,let visitorDict = dict["visitorInfo"] as? [String:String]
             else { return UIViewController() }
         
         let vc = cls.init()
         vc.title = title
+        
+        vc.visitorInfoDictionary = visitorDict
         //标题图片
         vc.tabBarItem.image = UIImage(named: imageName)
         //标题字体

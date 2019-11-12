@@ -12,6 +12,9 @@ class WBBaseViewController: UIViewController{
     
     var isLogon = false
     
+    //访客视图信息字典
+    var visitorInfoDictionary: [String:String]?
+    
     var tableView : UITableView?
     var refreshControl: UIRefreshControl?
     
@@ -55,6 +58,8 @@ extension WBBaseViewController {
     @objc func setVisitorView() {
         let visitorView = WBVisitorView(frame: view.bounds)
         view.addSubview(visitorView)
+        //设置访客视图信息
+        visitorView.visitorInfo = visitorInfoDictionary
     }
 }
 

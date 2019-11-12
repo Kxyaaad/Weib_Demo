@@ -24,17 +24,23 @@ class WBVisitorView: UIView {
             }
             
             iconView.image = UIImage(named: imageName)
+            houseiconView.isHidden = true
+            maskIconView.isHidden = true
         }
     }
     override init(frame: CGRect) {
+        
         super.init(frame: frame)
+    
         setupUI()
+    
     }
     
     required init?(coder: NSCoder) {
+     
         fatalError("init(coder:) has not been implemented")
+    
     }
- 
     
     //私有控件
     private lazy var iconView = UIImageView(image: UIImage(named: "visitordiscover_feed_image_smallicon"))
@@ -52,7 +58,7 @@ class WBVisitorView: UIView {
 
 extension WBVisitorView{
     func setupUI() {
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor.cz_color(withHex: 0xEDEDED)
         
         //添加控件
         addSubview(iconView)
@@ -61,11 +67,12 @@ extension WBVisitorView{
         addSubview(registerButton)
         addSubview(tipLabel)
         addSubview(loginButton)
-        
         //取消autoresizing
         for v in subviews {
             v.translatesAutoresizingMaskIntoConstraints = false
         }
+        
+        tipLabel.textAlignment = .center
         
         let margin: CGFloat = 20.0
         //纯代码自动布局
