@@ -16,20 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window:UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-//        if #available(iOS 13, *) {
-//           window = UIWindow.init()
-//           window?.backgroundColor = .white
-//           window?.frame = UIScreen.main.bounds
-//           window?.makeKeyAndVisible()
-//           window?.rootViewController = WBMainViewController()
-//        }else {
-            window = UIWindow.init()
-            window?.backgroundColor = .white
-            window?.frame = UIScreen.main.bounds
-            window?.makeKeyAndVisible()
-            window?.rootViewController = WBMainViewController()
-//        }
+
+        window = UIWindow.init()
+        window?.backgroundColor = .white
+        window?.frame = UIScreen.main.bounds
+        window?.makeKeyAndVisible()
+        window?.rootViewController = WBMainViewController()
+        
+        loadAppInfo()
         
         return true
     }
@@ -96,5 +90,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+}
+
+// MARK: - 网络加载应用程序信息
+
+extension AppDelegate {
+    private func loadAppInfo() {
+        //模拟异步
+        DispatchQueue.global().async {
+            let url = Bundle.main.url(forResource: "main", withExtension: "json")
+            
+            let data = NSData(contentsOf: url!)
+            //数据写入磁盘
+            let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+            let jsonPath = (docDir as NSString).appendingPathComponent("main.json")
+            
+            data?.write(toFile: jsonPath, atomically: true)
+            print("APP加载完毕\(jsonPath)")
+        }
+    }
 }
 

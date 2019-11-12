@@ -36,6 +36,7 @@
 		812711AA2351C4B70093EDFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 812711A92351C4B70093EDFF /* Assets.xcassets */; };
 		812711AD2351C4B70093EDFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 812711AB2351C4B70093EDFF /* LaunchScreen.storyboard */; };
 		819AED6723682777008C9B10 /* WBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819AED6623682777008C9B10 /* WBVisitorView.swift */; };
+		819CFC68237A8A1F0068A36A /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 819CFC67237A8A1E0068A36A /* main.json */; };
 		81C5644B2360072B00AC45AD /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C5644A2360072B00AC45AD /* WBDemoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		812711AC2351C4B70093EDFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		812711AE2351C4B70093EDFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		819AED6623682777008C9B10 /* WBVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBVisitorView.swift; sourceTree = "<group>"; };
+		819CFC67237A8A1E0068A36A /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		81C5644A2360072B00AC45AD /* WBDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -265,6 +267,7 @@
 		817DB5212366C4940014059C /* 主控制器 */ = {
 			isa = PBXGroup;
 			children = (
+				819CFC67237A8A1E0068A36A /* main.json */,
 				810BCB4F2354253F0018A5BF /* WBMainViewController.swift */,
 				810BCB51235425770018A5BF /* WBNavigationViewController.swift */,
 			);
@@ -347,6 +350,7 @@
 			files = (
 				812711AD2351C4B70093EDFF /* LaunchScreen.storyboard in Resources */,
 				812711AA2351C4B70093EDFF /* Assets.xcassets in Resources */,
+				819CFC68237A8A1F0068A36A /* main.json in Resources */,
 				812711A52351C4AD0093EDFF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

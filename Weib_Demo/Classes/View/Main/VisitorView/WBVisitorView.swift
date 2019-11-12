@@ -20,6 +20,7 @@ class WBVisitorView: UIView {
             tipLabel.text = message
             
             if imageName == "" {
+                startAnimation()
                 return
             }
             
@@ -40,6 +41,17 @@ class WBVisitorView: UIView {
      
         fatalError("init(coder:) has not been implemented")
     
+    }
+    
+    private func  startAnimation() {
+        //不停止的动画需要用到CAAnimation
+        let animation = CABasicAnimation(keyPath: "transform.rotation")
+        animation.toValue = 2 * M_PI
+        animation.repeatCount = MAXFLOAT
+        animation.duration = 15
+        animation.isRemovedOnCompletion = false //离开视图以后，动画不删除，回来后动画继续
+        //将动画添加到图层
+        iconView.layer.add(animation, forKey: nil)
     }
     
     //私有控件
@@ -111,5 +123,7 @@ extension WBVisitorView{
             options: [],
             metrics: metrics,
             views: viewDict))
+        
+        
     }
 }

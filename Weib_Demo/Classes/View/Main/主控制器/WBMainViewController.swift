@@ -52,13 +52,27 @@ extension WBMainViewController {
     }
     
     private func setupChildControllers() {
-        let array : [[String:Any]] = [
-            ["clsName":"WBHomeViewController", "title":"首页", "imageName":"tabbar_home", "visitorInfo":["imageName":"", "message":"关注一些人，回来看看有什么惊喜"]],
-            ["clsName":"WBMessageViewController", "title":"消息", "imageName":"tabbar_message_center", "visitorInfo":["imageName":"visitordiscover_image_message", "message":"登录后，别人评论你的微博，发给你的消息，都会在这里收到通知"]],
-            ["clsName":"*", "title":"", "imageName":"tianjia", "visitorInfo":["imageName":"", "message":"测试"]	],
-            ["clsName":"WBDiscoverViewController", "title":"发现", "imageName":"tabbar_discover", "visitorInfo":["imageName":"visitordiscover_image_message", "message":"登录后，最新、最热微博尽在掌握，不再会与实事潮流擦肩而过"]],
-            ["clsName":"WBProfileViewController", "title":"我", "imageName":"tabbar_profile", "visitorInfo":["imageName":"visitordiscover_image_profile", "message":"登录后，你的微博、相册、个人资料会显示在这里，展示给别人"]]
-        ]
+//        let array : [[String:Any]] = [
+//            ["clsName":"WBHomeViewController", "title":"首页", "imageName":"tabbar_home", "visitorInfo":["imageName":"", "message":"关注一些人，回来看看有什么惊喜"]],
+//            ["clsName":"WBMessageViewController", "title":"消息", "imageName":"tabbar_message_center", "visitorInfo":["imageName":"visitordiscover_image_message", "message":"登录后，别人评论你的微博，发给你的消息，都会在这里收到通知"]],
+//            ["clsName":"*", "title":"", "imageName":"tianjia", "visitorInfo":["imageName":"", "message":"测试"]	],
+//            ["clsName":"WBDiscoverViewController", "title":"发现", "imageName":"tabbar_discover", "visitorInfo":["imageName":"visitordiscover_image_message", "message":"登录后，最新、最热微博尽在掌握，不再会与实事潮流擦肩而过"]],
+//            ["clsName":"WBProfileViewController", "title":"我", "imageName":"tabbar_profile", "visitorInfo":["imageName":"visitordiscover_image_profile", "message":"登录后，你的微博、相册、个人资料会显示在这里，展示给别人"]]
+//        ]
+        
+//        if let path = Bundle.main.path(forResource: "main", ofType: "json") {
+//            print("文件存在")
+//        }else{
+//            print("文件不存在")
+//        }
+        
+        //从bundle加载配置的json
+        guard let path = Bundle.main.path(forResource: "main", ofType: "json"),
+            let data = NSData(contentsOfFile: path), let array = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [[String:Any]] else { return }
+        
+        
+//        let data = try! JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
+//        (data as NSData).write(toFile: "/Users/sandisk/Desktop/Demos/Weib_Demo/Weib_Demo/Classes/View/Main/主控制器/main.json", atomically: true)
         
         var arrayM = [UIViewController]()
         for dict in array {
