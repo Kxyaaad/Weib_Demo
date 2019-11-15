@@ -44,7 +44,8 @@ class WBHomeViewController: WBBaseViewController {
 extension WBHomeViewController {
     override func setUpUI() {
         super.setUpUI()
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends))
+//        super.setTable()
+        super.isLogon ? navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends)) : nil
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
     }
 }

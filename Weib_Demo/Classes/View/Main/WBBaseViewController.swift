@@ -29,6 +29,14 @@ class WBBaseViewController: UIViewController{
         // Do any additional setup after loading the view.
     }
     
+    @objc private func login() {
+        
+    }
+    
+    @objc private func regist() {
+        
+    }
+    
 }
 
 extension WBBaseViewController {
@@ -60,6 +68,11 @@ extension WBBaseViewController {
         view.addSubview(visitorView)
         //设置访客视图信息
         visitorView.visitorInfo = visitorInfoDictionary
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(regist))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(login))
+        navigationItem.leftBarButtonItem?.tintColor = .orange
+        navigationItem.rightBarButtonItem?.tintColor = .orange
     }
 }
 

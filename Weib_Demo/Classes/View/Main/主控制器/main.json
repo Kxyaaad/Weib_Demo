@@ -1,0 +1,47 @@
+[
+  {
+    "title" : "首页",
+    "clsName" : "WBHomeViewController",
+    "imageName" : "tabbar_home",
+    "visitorInfo" : {
+      "message" : "关注一些人，回来看看有什么惊喜",
+      "imageName" : ""
+    }
+  },
+  {
+    "imageName" : "tabbar_message_center",
+    "visitorInfo" : {
+      "imageName" : "visitordiscover_image_message",
+      "message" : "登录后，别人评论你的微博，发给你的消息，都会在这里收到通知"
+    },
+    "title" : "消息",
+    "clsName" : "WBMessageViewController"
+  },
+  {
+    "visitorInfo" : {
+      "imageName" : "",
+      "message" : "测试"
+    },
+    "clsName" : "*",
+    "title" : "",
+    "imageName" : "tianjia"
+  },
+  {
+    "visitorInfo" : {
+      "message" : "登录后，最新、最热微博尽在掌握，不再会与实事潮流擦肩而过",
+      "imageName" : "visitordiscover_image_message"
+    },
+    "clsName" : "WBDiscoverViewController",
+    "title" : "发现",
+    "imageName" : "tabbar_discover"
+  },
+  {
+    "imageName" : "tabbar_profile",
+    "title" : "我",
+    "visitorInfo" : {
+      "message" : "登录后，你的微博、相册、个人资料会显示在这里，展示给别人",
+      "imageName" : "visitordiscover_image_profile"
+    },
+    "clsName" : "WBProfileViewController"
+  }
+]
