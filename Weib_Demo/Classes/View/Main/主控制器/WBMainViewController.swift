@@ -55,7 +55,7 @@ extension WBMainViewController {
         //获取沙盒的文件路径
         let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         let jsonPath = (docDir as NSString).appendingPathComponent("main.json")
-            
+        print("沙盒路径", jsonPath)
         //加载data
         var data = NSData(contentsOfFile: jsonPath)
         
