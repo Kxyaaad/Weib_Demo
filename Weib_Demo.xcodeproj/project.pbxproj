@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -35,8 +35,10 @@
 		812711A82351C4AD0093EDFF /* Weib_Demo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 812711A62351C4AD0093EDFF /* Weib_Demo.xcdatamodeld */; };
 		812711AA2351C4B70093EDFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 812711A92351C4B70093EDFF /* Assets.xcassets */; };
 		812711AD2351C4B70093EDFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 812711AB2351C4B70093EDFF /* LaunchScreen.storyboard */; };
+		81507EBF23862759000D158E /* ZXPUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 81507EBE23862759000D158E /* ZXPUnicode.m */; };
 		819AED6723682777008C9B10 /* WBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819AED6623682777008C9B10 /* WBVisitorView.swift */; };
 		819CFC68237A8A1F0068A36A /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 819CFC67237A8A1E0068A36A /* main.json */; };
+		81BEE45A2383DDBB008CA40D /* WBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEE4592383DDBB008CA40D /* WBNetworkManager.swift */; };
 		81C5644B2360072B00AC45AD /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C5644A2360072B00AC45AD /* WBDemoViewController.swift */; };
 		B6D0260B41E636D395A85B5A /* Pods_Weib_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC067BAE65BCB3404E01748 /* Pods_Weib_Demo.framework */; };
 /* End PBXBuildFile section */
@@ -88,8 +90,11 @@
 		812711A92351C4B70093EDFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		812711AC2351C4B70093EDFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		812711AE2351C4B70093EDFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81507EBD23862759000D158E /* ZXPUnicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXPUnicode.h; sourceTree = "<group>"; };
+		81507EBE23862759000D158E /* ZXPUnicode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXPUnicode.m; sourceTree = "<group>"; };
 		819AED6623682777008C9B10 /* WBVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBVisitorView.swift; sourceTree = "<group>"; };
 		819CFC67237A8A1E0068A36A /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
+		81BEE4592383DDBB008CA40D /* WBNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBNetworkManager.swift; sourceTree = "<group>"; };
 		81C5644A2360072B00AC45AD /* WBDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
 		CDC067BAE65BCB3404E01748 /* Pods_Weib_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weib_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -135,6 +140,7 @@
 		810BCB47235423180018A5BF /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				81BEE4582383DD52008CA40D /* NetWork */,
 				810BCB5D2354480E0018A5BF /* Additions */,
 				810BCB83235448140018A5BF /* Extension */,
 			);
@@ -275,8 +281,18 @@
 				812711AE2351C4B70093EDFF /* Info.plist */,
 				812711A62351C4AD0093EDFF /* Weib_Demo.xcdatamodeld */,
 				810BCB8E23544C450018A5BF /* Weib_Demo-Bridge.h */,
+				81507EBC23862759000D158E /* ZXPUnicode */,
 			);
 			path = Weib_Demo;
+			sourceTree = "<group>";
+		};
+		81507EBC23862759000D158E /* ZXPUnicode */ = {
+			isa = PBXGroup;
+			children = (
+				81507EBD23862759000D158E /* ZXPUnicode.h */,
+				81507EBE23862759000D158E /* ZXPUnicode.m */,
+			);
+			path = ZXPUnicode;
 			sourceTree = "<group>";
 		};
 		817DB5212366C4940014059C /* 主控制器 */ = {
@@ -297,6 +313,14 @@
 			path = VisitorView;
 			sourceTree = "<group>";
 		};
+		81BEE4582383DD52008CA40D /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				81BEE4592383DDBB008CA40D /* WBNetworkManager.swift */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
 		81C564492360070200AC45AD /* 测试 */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,7 +335,6 @@
 				640A899E2A3B45FD05B93CFB /* Pods-Weib_Demo.debug.xcconfig */,
 				64894000A6F3BD8B98502B15 /* Pods-Weib_Demo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -326,7 +349,7 @@
 				812711962351C4AD0093EDFF /* Sources */,
 				812711972351C4AD0093EDFF /* Frameworks */,
 				812711982351C4AD0093EDFF /* Resources */,
-				026B68C66EA138E5AA6B0F77 /* [CP] Embed Pods Frameworks */,
+				E08BA57D66B805F51A19FF8D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -385,23 +408,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		026B68C66EA138E5AA6B0F77 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Weib_Demo/Pods-Weib_Demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Weib_Demo/Pods-Weib_Demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Weib_Demo/Pods-Weib_Demo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		062D17A24079F99FC96EEC12 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -424,6 +430,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E08BA57D66B805F51A19FF8D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Weib_Demo/Pods-Weib_Demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Weib_Demo/Pods-Weib_Demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Weib_Demo/Pods-Weib_Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -434,10 +457,12 @@
 				810BCB5A235426560018A5BF /* WBDiscoverViewController.swift in Sources */,
 				810BCB7E2354480E0018A5BF /* NSObject+CZRuntime.m in Sources */,
 				810BCB54235425B60018A5BF /* WBBaseViewController.swift in Sources */,
+				81BEE45A2383DDBB008CA40D /* WBNetworkManager.swift in Sources */,
 				812711A22351C4AD0093EDFF /* ViewController.swift in Sources */,
 				81C5644B2360072B00AC45AD /* WBDemoViewController.swift in Sources */,
 				810BCB7B2354480E0018A5BF /* NSString+CZBase64.m in Sources */,
 				810BCB87235448140018A5BF /* UIBarButtonItem+extension.swift in Sources */,
+				81507EBF23862759000D158E /* ZXPUnicode.m in Sources */,
 				810BCB7F2354480E0018A5BF /* UIViewController+CZAddition.m in Sources */,
 				810BCB822354480E0018A5BF /* NSArray+Log.m in Sources */,
 				810BCB7D2354480E0018A5BF /* UIButton+CZAddition.m in Sources */,
@@ -612,7 +637,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.KXY.Weib-Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = com.KXY.Weibemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -632,7 +657,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.KXY.Weib-Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = com.KXY.Weibemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -14,10 +14,14 @@ class WBHomeViewController: WBBaseViewController {
 
     private lazy var statusList = [String]()
     
+    let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        WBNetworkManager.shared.request(Method: .GET, URLString: urlString, parameter: ["access_token":"2.00YWlWBHJj2S5D05171bc783dOKFBB"]) { (json, bool) in
+            print("获取的数据", json)
+        }
     }
     
     override func loadData() {
