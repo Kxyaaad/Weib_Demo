@@ -17,6 +17,7 @@ enum WBHTTPMethod {
 
 class WBNetworkManager: AFHTTPSessionManager {
     
+    ///封装AFN的GET/POST请求
     static let shared = WBNetworkManager()
     
     

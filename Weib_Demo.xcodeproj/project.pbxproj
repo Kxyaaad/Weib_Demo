@@ -36,6 +36,7 @@
 		812711AA2351C4B70093EDFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 812711A92351C4B70093EDFF /* Assets.xcassets */; };
 		812711AD2351C4B70093EDFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 812711AB2351C4B70093EDFF /* LaunchScreen.storyboard */; };
 		81507EBF23862759000D158E /* ZXPUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 81507EBE23862759000D158E /* ZXPUnicode.m */; };
+		81507EC1238633E4000D158E /* WBNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81507EC0238633E4000D158E /* WBNetworkManager+Extension.swift */; };
 		819AED6723682777008C9B10 /* WBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819AED6623682777008C9B10 /* WBVisitorView.swift */; };
 		819CFC68237A8A1F0068A36A /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 819CFC67237A8A1E0068A36A /* main.json */; };
 		81BEE45A2383DDBB008CA40D /* WBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEE4592383DDBB008CA40D /* WBNetworkManager.swift */; };
@@ -92,6 +93,7 @@
 		812711AE2351C4B70093EDFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81507EBD23862759000D158E /* ZXPUnicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXPUnicode.h; sourceTree = "<group>"; };
 		81507EBE23862759000D158E /* ZXPUnicode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXPUnicode.m; sourceTree = "<group>"; };
+		81507EC0238633E4000D158E /* WBNetworkManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WBNetworkManager+Extension.swift"; sourceTree = "<group>"; };
 		819AED6623682777008C9B10 /* WBVisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBVisitorView.swift; sourceTree = "<group>"; };
 		819CFC67237A8A1E0068A36A /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		81BEE4592383DDBB008CA40D /* WBNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBNetworkManager.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				81BEE4592383DDBB008CA40D /* WBNetworkManager.swift */,
+				81507EC0238633E4000D158E /* WBNetworkManager+Extension.swift */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				819AED6723682777008C9B10 /* WBVisitorView.swift in Sources */,
 				810BCB7A2354480E0018A5BF /* UILabel+CZAddition.m in Sources */,
 				810BCB502354253F0018A5BF /* WBMainViewController.swift in Sources */,
+				81507EC1238633E4000D158E /* WBNetworkManager+Extension.swift in Sources */,
 				810BCB582354263E0018A5BF /* WBMessageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
