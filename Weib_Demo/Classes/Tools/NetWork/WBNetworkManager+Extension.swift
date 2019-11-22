@@ -23,7 +23,7 @@ extension WBNetworkManager {
                 //            print("最终结果", list)
                             completion(list, isSuccess)
             }else {
-                print(json)
+//                print(json)
             }
             
         }

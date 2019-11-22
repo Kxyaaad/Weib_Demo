@@ -10,7 +10,7 @@ import UIKit
 
 class WBBaseViewController: UIViewController{
     
-    var isLogon = false
+    var isLogon = true
     
     //访客视图信息字典
     var visitorInfoDictionary: [String:String]?

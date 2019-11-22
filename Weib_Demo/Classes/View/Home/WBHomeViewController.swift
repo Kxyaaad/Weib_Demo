@@ -12,28 +12,24 @@ private let cellID = "cellID"
 
 class WBHomeViewController: WBBaseViewController {
 
-    private lazy var statusList = [String]()
+    private lazy var listViewModel = WBStatusListModel()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        WBNetworkManager.shared.statusList { (result, isSuccess) in
-            print(result)
-        }
-        
+        self.refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
     }
     
     override func loadData() {
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2) {
-            for i in 0..<10 {
-                self.statusList.insert(i.description, at: 0)
+        listViewModel.loadStatus { (isSuccess) in
+            //
+            print("cell个数", self.listViewModel.statusList.count)
+            if isSuccess == true {
+                self.refreshControl?.endRefreshing()
+                self.tableView?.reloadData()
             }
-            print("刷新数据")
-            self.tableView?.reloadData()
-            self.refreshControl?.endRefreshing()
         }
         
         
@@ -59,17 +55,18 @@ extension WBHomeViewController {
 extension WBHomeViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return statusList.count
+        return listViewModel.statusList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-        cell.textLabel?.text = statusList[indexPath.row]
+        cell.textLabel?.text = self.listViewModel.statusList[indexPath.row].text + "."
+        print("文字内容",self.listViewModel.statusList[indexPath.row].text)
         return cell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == self.statusList.count - 1 {
+        if indexPath.row == self.listViewModel.statusList.count - 1 {
             self.loadData()
         }
     }

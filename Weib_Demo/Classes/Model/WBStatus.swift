@@ -12,8 +12,8 @@ import YYModel
 class WBStatus: NSObject {
     
     @objc var id:Int64 = 0 //微博ID
-    var text:String = "" //微博信息内容
-    var source:String = "" //信息来源
+    @objc var text:String = "" //微博信息内容
+    @objc var source:String = "" //信息来源
     
     //重写计算型属性
     override var description: String {

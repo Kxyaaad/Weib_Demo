@@ -16,8 +16,8 @@ class WBStatusListModel:WBStatus {
     func loadStatus(completion:@escaping (_ isSuccess:Bool)->()) {
         WBNetworkManager.shared.statusList { (list, isSuccess) in
             //字典转模型
-            guard let array  = NSArray.yy_modelArray(with: WBStatus.self, json: list) as? [WBStatus] else {
-                completion(false)
+            guard let array  = NSArray.yy_modelArray(with: WBStatus.self, json: list ?? []) as? [WBStatus] else {
+                completion(isSuccess)
                 return
             }
             
@@ -25,7 +25,7 @@ class WBStatusListModel:WBStatus {
             self.statusList += array
             
             //完成回调
-            completion(true)
+            completion(isSuccess)
         }
     }
 }
