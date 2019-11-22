@@ -18,15 +18,13 @@ class WBHomeViewController: WBBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        self.refreshControl?.addTarget(self, action: #selector(loadData(isPullup:)), for: .valueChanged)
     }
     
-    override func loadData() {
+    override func loadData(isPullup:Bool) {
         
-        listViewModel.loadStatus { (isSuccess) in
-            //
-            print("cell个数", self.listViewModel.statusList.count)
-            if isSuccess == true {
+        listViewModel.loadStatus(isPullup: isPullup) { (success) in
+            if success == true {
                 self.refreshControl?.endRefreshing()
                 self.tableView?.reloadData()
             }
@@ -67,7 +65,7 @@ extension WBHomeViewController {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == self.listViewModel.statusList.count - 1 {
-            self.loadData()
+            self.loadData(isPullup: true)
         }
     }
 }

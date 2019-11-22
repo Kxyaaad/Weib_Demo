@@ -18,7 +18,7 @@ class WBBaseViewController: UIViewController{
     var tableView : UITableView?
     var refreshControl: UIRefreshControl?
     
-    @objc func loadData() {
+    @objc func loadData(isPullup:Bool) {
         //如果子类不识闲任何方法，则关闭刷新动画
         refreshControl?.endRefreshing()
     }
@@ -44,7 +44,7 @@ extension WBBaseViewController {
         view.backgroundColor = UIColor.cz_random()
         isLogon ? setTable() : setVisitorView()
        
-        loadData()
+        loadData(isPullup: false)
     }
     //添加表格视图
     @objc func setTable() {
