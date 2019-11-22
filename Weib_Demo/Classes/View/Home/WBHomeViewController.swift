@@ -27,6 +27,7 @@ class WBHomeViewController: WBBaseViewController {
             if success == true {
                 self.refreshControl?.endRefreshing()
                 self.tableView?.reloadData()
+                print("最后一条", self.listViewModel.statusList.last?.text)
             }
         }
         
@@ -59,12 +60,11 @@ extension WBHomeViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         cell.textLabel?.text = self.listViewModel.statusList[indexPath.row].text + "."
-        print("文字内容",self.listViewModel.statusList[indexPath.row].text)
         return cell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == self.listViewModel.statusList.count - 1 {
+        if indexPath.row == self.listViewModel.statusList.count - 4{
             self.loadData(isPullup: true)
         }
     }
