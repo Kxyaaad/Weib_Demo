@@ -11,7 +11,7 @@ import YYModel
 //微博数据模型
 class WBStatus: NSObject {
     
-    var id:Int64 = 0 //微博ID
+    @objc var id:Int64 = 0 //微博ID
     var text:String = "" //微博信息内容
     var source:String = "" //信息来源
     
