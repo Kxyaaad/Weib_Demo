@@ -20,7 +20,7 @@ class WBNetworkManager: AFHTTPSessionManager {
     //封装AFN的GET/POST请求
     static let shared = WBNetworkManager()
     //访问令牌
-    var accessToken: String? = "2.00YWlWBH00R1W88b6e4c948aL5gDSC"
+    var accessToken: String? = "2.00YWlWBHJj2S5D05171bc783dOKFBB"
     
     
     //负责拼接token的网络请求

@@ -21,17 +21,14 @@ class WBHomeViewController: WBBaseViewController {
         self.refreshControl?.addTarget(self, action: #selector(loadData(isPullup:)), for: .valueChanged)
     }
     
-    override func loadData(isPullup:Bool) {
+    override func loadData(isPullup:Bool = false) {
         
-        listViewModel.loadStatus(isPullup: isPullup) { (success) in
-            if success == true {
-                self.refreshControl?.endRefreshing()
+        listViewModel.loadStatus(isPullup: isPullup) { (success, hasMorePullup) in
+            self.refreshControl?.endRefreshing()
+            if hasMorePullup {
                 self.tableView?.reloadData()
-                print("最后一条", self.listViewModel.statusList.last?.text)
             }
         }
-        
-        
     }
     
 
