@@ -9,14 +9,16 @@
 import UIKit
 
 class WBMainViewController: UITabBarController {
-
+    var timer = Timer()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupChildControllers()
         setupComposeButton()
         self.tabBar.tintColor = UIColor.orange
+        UIApplication.shared.applicationIconBadgeNumber = 4
         
+        delegate = self
     }
     
     //MARK: -私有控件
@@ -25,7 +27,7 @@ class WBMainViewController: UITabBarController {
     //MARK: - 监听方法
     @objc func composeStatus() {
         let vc = UIViewController()
-        vc.modalPresentationStyle = .fullScreen
+//        vc.modalPresentationStyle = .fullScreen
         vc.view.backgroundColor = UIColor.cz_random()
         present(vc, animated: true, completion: nil)
     }
@@ -36,13 +38,26 @@ class WBMainViewController: UITabBarController {
     
 }
 
+//MARK: 设置TabBar代理
+extension WBMainViewController:UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if viewController == tabBarController.viewControllers![2] {
+            return false
+        }else {
+            return true
+        }
+    }
+}
+
 //MARK: 设置界面
 
 extension WBMainViewController {
     
     private func setupComposeButton() {
+        
+        
         let count = CGFloat(children.count)
-        let w = tabBar.bounds.width / count - 1
+        let w = tabBar.bounds.width / count
     
         composeButton.frame = tabBar.bounds.insetBy(dx: 2 * w, dy: 0)
         tabBar.addSubview(composeButton)
