@@ -42,9 +42,9 @@ class WBBaseViewController: UIViewController{
 extension WBBaseViewController {
     @objc func setUpUI() {
         view.backgroundColor = UIColor.cz_random()
-        isLogon ? setTable() : setVisitorView()
+        WBNetworkManager.shared.userLogon ? setTable() : setVisitorView()
        
-        loadData(isPullup: false)
+        WBNetworkManager.shared.userLogon ? loadData(isPullup: false) : ()
     }
     //添加表格视图
     @objc func setTable() {

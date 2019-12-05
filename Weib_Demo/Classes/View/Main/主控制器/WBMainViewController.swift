@@ -41,11 +41,28 @@ class WBMainViewController: UITabBarController {
 //MARK: 设置TabBar代理
 extension WBMainViewController:UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        
+        let index  = tabBarController.viewControllers?.firstIndex(of: viewController)
+        //如果在已经在首页，再点击则自动滑动到顶部
+        if selectedIndex == index && selectedIndex == 0 {
+            let nav = children[0] as! UINavigationController
+            let vc = nav.children[0] as! WBHomeViewController
+           
+            vc.tableView?.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                print("开始加载")
+                vc.refreshControl?.beginRefreshing()
+                vc.loadData()
+            }
+        }
+        
         if viewController == tabBarController.viewControllers![2] {
             return false
         }else {
             return true
         }
+    
+        
     }
 }
 
