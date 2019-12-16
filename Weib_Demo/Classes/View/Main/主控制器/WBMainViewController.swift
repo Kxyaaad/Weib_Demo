@@ -19,6 +19,14 @@ class WBMainViewController: UITabBarController {
         UIApplication.shared.applicationIconBadgeNumber = 4
         
         delegate = self
+        
+        //注册通知
+        NotificationCenter.default.addObserver(self, selector: #selector(userLogin(n:)), name: Notification.Name(WBUserShouldLoginNotification), object: nil)
+    }
+    
+    deinit {
+        //注销卷筒纸
+        NotificationCenter.default.removeObserver(self)
     }
     
     //MARK: -私有控件
@@ -34,6 +42,13 @@ class WBMainViewController: UITabBarController {
     
     open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
+    }
+    
+    @objc private func userLogin(n:Notification) {
+        print(n)
+        
+        let vc = WBOAuthViewController()
+        present(vc, animated: true, completion: nil)
     }
     
 }
@@ -99,7 +114,6 @@ extension WBMainViewController {
         }
         
         guard let array = try? JSONSerialization.jsonObject(with: data! as Data, options: []) as? [[String:Any]] else { return }
-        
         //从bundle加载配置的json
 //        guard let path = Bundle.main.path(forResource: "main", ofType: "json"),
 //            let data = NSData(contentsOfFile: path), let array = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [[String:Any]] else { return }

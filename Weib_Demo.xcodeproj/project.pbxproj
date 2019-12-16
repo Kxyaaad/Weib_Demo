@@ -28,6 +28,7 @@
 		810BCB822354480E0018A5BF /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 810BCB752354480E0018A5BF /* NSArray+Log.m */; };
 		810BCB86235448140018A5BF /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810BCB84235448140018A5BF /* Bundle+extension.swift */; };
 		810BCB87235448140018A5BF /* UIBarButtonItem+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810BCB85235448140018A5BF /* UIBarButtonItem+extension.swift */; };
+		811BA35A23A2306F00A4AD80 /* WBOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811BA35923A2306F00A4AD80 /* WBOAuthViewController.swift */; };
 		8127119E2351C4AD0093EDFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8127119D2351C4AD0093EDFF /* AppDelegate.swift */; };
 		812711A02351C4AD0093EDFF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8127119F2351C4AD0093EDFF /* SceneDelegate.swift */; };
 		812711A22351C4AD0093EDFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812711A12351C4AD0093EDFF /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 		812711A82351C4AD0093EDFF /* Weib_Demo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 812711A62351C4AD0093EDFF /* Weib_Demo.xcdatamodeld */; };
 		812711AA2351C4B70093EDFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 812711A92351C4B70093EDFF /* Assets.xcassets */; };
 		812711AD2351C4B70093EDFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 812711AB2351C4B70093EDFF /* LaunchScreen.storyboard */; };
+		814011132399F488009CE6D9 /* WeiBoCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814011122399F488009CE6D9 /* WeiBoCommon.swift */; };
 		81507EBF23862759000D158E /* ZXPUnicode.m in Sources */ = {isa = PBXBuildFile; fileRef = 81507EBE23862759000D158E /* ZXPUnicode.m */; };
 		81507EC1238633E4000D158E /* WBNetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81507EC0238633E4000D158E /* WBNetworkManager+Extension.swift */; };
 		8150B6D9238692E300E89DA3 /* WBStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8150B6D8238692E300E89DA3 /* WBStatus.swift */; };
@@ -85,6 +87,7 @@
 		810BCB84235448140018A5BF /* Bundle+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+extension.swift"; sourceTree = "<group>"; };
 		810BCB85235448140018A5BF /* UIBarButtonItem+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+extension.swift"; sourceTree = "<group>"; };
 		810BCB8E23544C450018A5BF /* Weib_Demo-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weib_Demo-Bridge.h"; sourceTree = "<group>"; };
+		811BA35923A2306F00A4AD80 /* WBOAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBOAuthViewController.swift; sourceTree = "<group>"; };
 		8127119A2351C4AD0093EDFF /* Weib_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weib_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8127119D2351C4AD0093EDFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8127119F2351C4AD0093EDFF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +97,7 @@
 		812711A92351C4B70093EDFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		812711AC2351C4B70093EDFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		812711AE2351C4B70093EDFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		814011122399F488009CE6D9 /* WeiBoCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiBoCommon.swift; sourceTree = "<group>"; };
 		81507EBD23862759000D158E /* ZXPUnicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXPUnicode.h; sourceTree = "<group>"; };
 		81507EBE23862759000D158E /* ZXPUnicode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXPUnicode.m; sourceTree = "<group>"; };
 		81507EC0238633E4000D158E /* WBNetworkManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WBNetworkManager+Extension.swift"; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 				81BEE4582383DD52008CA40D /* NetWork */,
 				810BCB5D2354480E0018A5BF /* Additions */,
 				810BCB83235448140018A5BF /* Extension */,
+				814011122399F488009CE6D9 /* WeiBoCommon.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 		810BCB4C2354234E0018A5BF /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				811BA35823A2303A00A4AD80 /* OAuth */,
 				819AED652368273C008C9B10 /* VisitorView */,
 				81C564492360070200AC45AD /* 测试 */,
 				817DB5212366C4940014059C /* 主控制器 */,
@@ -262,6 +268,14 @@
 				810BCB85235448140018A5BF /* UIBarButtonItem+extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		811BA35823A2303A00A4AD80 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				811BA35923A2306F00A4AD80 /* WBOAuthViewController.swift */,
+			);
+			path = OAuth;
 			sourceTree = "<group>";
 		};
 		812711912351C4AD0093EDFF = {
@@ -484,9 +498,11 @@
 				810BCB7F2354480E0018A5BF /* UIViewController+CZAddition.m in Sources */,
 				810BCB822354480E0018A5BF /* NSArray+Log.m in Sources */,
 				810BCB7D2354480E0018A5BF /* UIButton+CZAddition.m in Sources */,
+				811BA35A23A2306F00A4AD80 /* WBOAuthViewController.swift in Sources */,
 				812711A82351C4AD0093EDFF /* Weib_Demo.xcdatamodeld in Sources */,
 				810BCB792354480E0018A5BF /* UIScreen+CZAddition.m in Sources */,
 				8127119E2351C4AD0093EDFF /* AppDelegate.swift in Sources */,
+				814011132399F488009CE6D9 /* WeiBoCommon.swift in Sources */,
 				810BCB802354480E0018A5BF /* NSString+CZHash.m in Sources */,
 				812711A02351C4AD0093EDFF /* SceneDelegate.swift in Sources */,
 				810BCB782354480E0018A5BF /* UIView+CZAddition.m in Sources */,

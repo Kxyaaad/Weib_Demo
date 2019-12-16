@@ -30,7 +30,9 @@ class WBBaseViewController: UIViewController{
     }
     
     @objc private func login() {
-        
+        print("登录")
+        //发送通知
+        NotificationCenter.default.post(name: Notification.Name(WBUserShouldLoginNotification), object: nil)
     }
     
     @objc private func regist() {
