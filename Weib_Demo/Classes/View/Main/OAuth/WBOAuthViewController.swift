@@ -20,9 +20,10 @@ class WBOAuthViewController: UIViewController {
         super.viewDidLoad()
         
         //加载授权页面
-        let urlString = "https://api.weibo.com/oauth2/authorize?client_id=\(WBAppID)&redirect_url=\(WBRedirectURI)"
-        guard let url = URL(string: urlString),  let request = URLRequest(url: url) else {return}
-        
+        let urlString = "https://api.weibo.com/oauth2/authorize?client_id=\(WBAppID)&redirect_uri=\(WBRedirectURI)"
+        guard let url = URL(string: urlString),  let request:URLRequest? = URLRequest(url: url) else {return}
+        webView.frame = view.frame
+        webView.loadRequest(request!)
     }
     
 
