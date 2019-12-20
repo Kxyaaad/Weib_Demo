@@ -14,7 +14,7 @@ let WBAppID = "3107403987"
 let WBAppSecret = "7407e8ec2f18cc6b72c7a22bd29e841b"
 
 //登录回调地址
-let WBRedirectURI = "https://www.baidu.com"
+let WBRedirectURI = "http://success.com"
 
 //MARK: 全局通知定义
 ///用户需要登录的通知

@@ -18,23 +18,52 @@ class WBOAuthViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        btn.setTitle("消失", for: .normal)
+        btn.setTitleColor(.black, for: .normal)
+        view.addSubview(btn)
+        btn.addTarget(self, action: #selector(dis), for: .touchUpInside)
         
         //加载授权页面
         let urlString = "https://api.weibo.com/oauth2/authorize?client_id=\(WBAppID)&redirect_uri=\(WBRedirectURI)"
         guard let url = URL(string: urlString),  let request:URLRequest? = URLRequest(url: url) else {return}
         webView.frame = view.frame
+        webView.delegate = self
         webView.loadRequest(request!)
+        
+    }
+    @objc func dis() {
+        print("消失")
+        self.dismiss(animated: true, completion: nil)
     }
     
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension WBOAuthViewController:UIWebViewDelegate {
+    
+    /// webView将要家在请求
+    /// - Parameters:
+    ///   - webView: webview
+    ///   - request: 要加载的请求
+    ///   - navigationType: 导航类型
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
+            
+        print("加载请求--\(request.url?.absoluteString)")
+        
+        print("导航类型--\(navigationType)")
+        
+        if request.url?.absoluteString.hasPrefix(WBRedirectURI) == false {
+            return true
+        }
+        //拿到返回的授权码
+        if request.url?.query?.hasPrefix("code=") == false {
+            print("取消授权")
+            return true
+        }else{
+            print("登录成功")
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        return false
     }
-    */
-
 }
