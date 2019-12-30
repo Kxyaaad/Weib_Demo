@@ -61,6 +61,7 @@ extension WBOAuthViewController:UIWebViewDelegate {
             return true
         }else{
             print("登录成功")
+            print("授权码", request.url?.query?["code=".endIndex...])
             self.dismiss(animated: true, completion: nil)
         }
         
