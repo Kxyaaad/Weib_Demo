@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class WBOAuthViewController: UIViewController {
     
@@ -29,11 +30,13 @@ class WBOAuthViewController: UIViewController {
         guard let url = URL(string: urlString),  let request:URLRequest? = URLRequest(url: url) else {return}
         webView.frame = view.frame
         webView.delegate = self
+        webView.scrollView.isScrollEnabled = false
         webView.loadRequest(request!)
         
     }
     @objc func dis() {
         print("消失")
+        SVProgressHUD.dismiss()
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -67,4 +70,13 @@ extension WBOAuthViewController:UIWebViewDelegate {
         
         return false
     }
+    
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        SVProgressHUD.show()
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        SVProgressHUD.dismiss()
+    }
+    
 }
