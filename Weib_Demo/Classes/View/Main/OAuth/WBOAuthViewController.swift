@@ -65,6 +65,9 @@ extension WBOAuthViewController:UIWebViewDelegate {
         }else{
             print("登录成功")
             print("授权码", request.url?.query?["code=".endIndex...])
+            let code = request.url?.query?["code=".endIndex...] ?? ""
+            WBNetworkManager.shared.getAccessToken(code: String(code))
+            SVProgressHUD.dismiss()
             self.dismiss(animated: true, completion: nil)
         }
         

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04E1645223B9E2E400224A2B /* WBUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1645123B9E2E400224A2B /* WBUserAccount.swift */; };
 		810BCB502354253F0018A5BF /* WBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810BCB4F2354253F0018A5BF /* WBMainViewController.swift */; };
 		810BCB52235425770018A5BF /* WBNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810BCB51235425770018A5BF /* WBNavigationViewController.swift */; };
 		810BCB54235425B60018A5BF /* WBBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810BCB53235425B60018A5BF /* WBBaseViewController.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04E1645123B9E2E400224A2B /* WBUserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBUserAccount.swift; sourceTree = "<group>"; };
 		640A899E2A3B45FD05B93CFB /* Pods-Weib_Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weib_Demo.debug.xcconfig"; path = "Target Support Files/Pods-Weib_Demo/Pods-Weib_Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		64894000A6F3BD8B98502B15 /* Pods-Weib_Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weib_Demo.release.xcconfig"; path = "Target Support Files/Pods-Weib_Demo/Pods-Weib_Demo.release.xcconfig"; sourceTree = "<group>"; };
 		810BCB4F2354253F0018A5BF /* WBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMainViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04E1645023B9E2C700224A2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04E1645123B9E2E400224A2B /* WBUserAccount.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		07B2AE8B725A4EF99472196E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,6 +356,7 @@
 		81BEE4582383DD52008CA40D /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
+				04E1645023B9E2C700224A2B /* Model */,
 				81BEE4592383DDBB008CA40D /* WBNetworkManager.swift */,
 				81507EC0238633E4000D158E /* WBNetworkManager+Extension.swift */,
 			);
@@ -509,6 +520,7 @@
 				810BCB7C2354480E0018A5BF /* NSString+CZPath.m in Sources */,
 				810BCB52235425770018A5BF /* WBNavigationViewController.swift in Sources */,
 				810BCB5C235426720018A5BF /* WBProfileViewController.swift in Sources */,
+				04E1645223B9E2E400224A2B /* WBUserAccount.swift in Sources */,
 				810BCB772354480E0018A5BF /* UIColor+CZAddition.m in Sources */,
 				810BCB56235426030018A5BF /* WBHomeViewController.swift in Sources */,
 				810BCB86235448140018A5BF /* Bundle+extension.swift in Sources */,

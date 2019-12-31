@@ -18,19 +18,24 @@ enum WBHTTPMethod {
 class WBNetworkManager: AFHTTPSessionManager {
     
     //封装AFN的GET/POST请求
-    static let shared = WBNetworkManager()
-    //访问令牌
-    var accessToken: String? //= "2.00YWlWBHJj2S5D05171bc783dOKFBB" 2.00YWlWBH00R1W88b6e4c948aL5gDSC
+    static let shared: WBNetworkManager = {
+        let instance = WBNetworkManager()
+        
+        //设置响应反序列化支持的数据类型
+        instance.responseSerializer.acceptableContentTypes?.insert("text/plain")
+        
+        return instance
+    }()
+   
+    lazy var userAccount = WBUserAccount()
     
-    var userLogon:Bool{
-        return accessToken != nil
-    }
+    lazy var userLogon = (WBUserAccount().access_token != nil) ? true : false
     
     //负责拼接token的网络请求
     func tokenRequest(Method:WBHTTPMethod, URLString: String, parameter:[String:Any]?, completion: @escaping (_ json:Any?, _ isSuccess:Bool)->()) {
         
         //如果accessToken为nil,则直接返回
-        guard accessToken != nil else { return
+        guard userAccount.access_token != nil else { return
             completion(nil, false)
         }
         //如果为nil，则新建一个字典
@@ -38,7 +43,7 @@ class WBNetworkManager: AFHTTPSessionManager {
         if parameter == nil {
             parameter = [String:Any]()
         }
-        parameter!["access_token"] = accessToken
+        parameter!["access_token"] = userAccount.access_token
         //调用request发起真正的网络请求方法
         request(Method: Method, URLString: URLString, parameter: parameter, completion: completion)
     }
