@@ -29,7 +29,7 @@ class WBNetworkManager: AFHTTPSessionManager {
    
     lazy var userAccount = WBUserAccount()
     
-    lazy var userLogon = (WBUserAccount().access_token != nil) ? true : false
+    lazy var userLogon = (userAccount.access_token != nil) ? true : false
     
     //负责拼接token的网络请求
     func tokenRequest(Method:WBHTTPMethod, URLString: String, parameter:[String:Any]?, completion: @escaping (_ json:Any?, _ isSuccess:Bool)->()) {
