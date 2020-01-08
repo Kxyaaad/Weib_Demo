@@ -71,9 +71,12 @@ extension WBOAuthViewController:UIWebViewDelegate {
                     SVProgressHUD.show(withStatus: "网络请求失败")
                 }else{
                     //发送登录成功消息 -- 不关心有没有监听
+                   
+                    self.dis()
+
                     NotificationCenter.default.post(name: NSNotification.Name(WBUserLoginSuccessedNotification), object: nil)
                     
-                    self.dis()
+                    WBNetworkManager.shared.userLogon = true
                 }
             })
             SVProgressHUD.dismiss()

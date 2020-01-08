@@ -44,6 +44,7 @@ extension WBHomeViewController {
         super.setUpUI()
 //        super.setTable()
         super.isLogon ? navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends)) : nil
+       
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
     }
 }

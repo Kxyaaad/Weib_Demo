@@ -48,6 +48,7 @@ class WBMainViewController: UITabBarController {
         print(n)
         
         let vc = WBOAuthViewController()
+        vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }
     
