@@ -27,6 +27,13 @@ class WBBaseViewController: UIViewController{
         super.viewDidLoad()
         setUpUI()
         // Do any additional setup after loading the view.
+        //注册通知
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess(Noti:)), name: NSNotification.Name(rawValue: WBUserLoginSuccessedNotification), object: nil)
+    }
+    
+    deinit {
+        //注销通知
+        NotificationCenter.default.removeObserver(self)
     }
     
     @objc private func login() {
@@ -42,6 +49,21 @@ class WBBaseViewController: UIViewController{
 }
 
 extension WBBaseViewController {
+    
+    //登录成功处理
+    @objc private func loginSuccess(Noti: Notification) {
+        print("登录成功\(Noti)")
+        
+        //更新UI => 将访客视图替换为表格视图
+        //需要重新设置View
+        view = nil
+        
+        //注销通知
+        NotificationCenter.default.removeObserver(self)
+        
+    }
+    
+    
     @objc func setUpUI() {
         view.backgroundColor = UIColor.cz_random()
         WBNetworkManager.shared.userLogon ? setTable() : setVisitorView()

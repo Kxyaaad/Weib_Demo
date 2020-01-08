@@ -66,9 +66,18 @@ extension WBOAuthViewController:UIWebViewDelegate {
             print("登录成功")
             print("授权码", request.url?.query?["code=".endIndex...])
             let code = request.url?.query?["code=".endIndex...] ?? ""
-            WBNetworkManager.shared.getAccessToken(code: String(code))
+            WBNetworkManager.shared.getAccessToken(code: String(code), completion: {(isSuccessed) in
+                if !isSuccessed {
+                    SVProgressHUD.show(withStatus: "网络请求失败")
+                }else{
+                    //发送登录成功消息 -- 不关心有没有监听
+                    NotificationCenter.default.post(name: NSNotification.Name(WBUserLoginSuccessedNotification), object: nil)
+                    
+                    self.dis()
+                }
+            })
             SVProgressHUD.dismiss()
-            self.dismiss(animated: true, completion: nil)
+//            self.dismiss(animated: true, completion: nil)
         }
         
         return false

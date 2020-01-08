@@ -31,15 +31,30 @@ class WBUserAccount: NSObject {
     override init() {
         super.init()
         //从磁盘加载
-        guard let path = accountFile.cz_appendDocumentDir() else { return }
-        let data = NSData(contentsOfFile: path)
+        guard let path = accountFile.cz_appendDocumentDir(), let data = NSData(contentsOfFile: path) else { return }
+        
         
         //使用字典设置属性值
-        let dict = try? JSONSerialization.jsonObject(with: data! as Data, options: []) as? [String:Any]
-        
-        print("读取文件", dict)
+        let dict = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [String:Any]
         
         self.yy_modelSet(with: dict ?? [:])
+        
+        //判断 token 是否过期
+        if expiresDate?.compare(Date()) != .orderedDescending {
+            print("账号过期")
+            
+            //清空token
+            access_token = nil
+            uid = nil
+            
+            //删除账户文件
+           _ = try? FileManager.default.removeItem(atPath: path)
+            
+        }else {
+            print("没有过期")
+        }
+
+        
     }
     
     func saveAccount() {
@@ -56,4 +71,5 @@ class WBUserAccount: NSObject {
         //写入磁盘
         (data as NSData).write(toFile: fileName, atomically: true)
     }
+    
 }
