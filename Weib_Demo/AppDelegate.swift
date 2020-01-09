@@ -8,7 +8,8 @@
 
 import UIKit
 import CoreData
-
+import SVProgressHUD
+import AFNetworking
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -108,6 +109,17 @@ extension AppDelegate {
             data?.write(toFile: jsonPath, atomically: true)
             print("APP加载完毕\(jsonPath)")
         }
+    }
+}
+
+extension AppDelegate {
+    
+    private func stupAddtion() {
+        //设置SVProguressHUD最短消失时间
+        SVProgressHUD.setMinimumDismissTimeInterval(3)
+        
+        //AFNetWorking网络加载指示器
+        AFNetworkActivityIndicatorManager.shared().isEnabled = true
     }
 }
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class WBMainViewController: UITabBarController {
     var timer = Timer()
@@ -46,10 +47,22 @@ class WBMainViewController: UITabBarController {
     
     @objc private func userLogin(n:Notification) {
         print(n)
+        if n.object != nil {
+//            SVProgressHUD.showError(withStatus: "登录身份过期，请重新登录")
+            SVProgressHUD.showInfo(withStatus: "登录身份过期，请重新登录")
+       
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                let vc = WBOAuthViewController()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
+            }
         
-        let vc = WBOAuthViewController()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true, completion: nil)
+        }else {
+            let vc = WBOAuthViewController()
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true, completion: nil)
+        }
+       
     }
     
 }

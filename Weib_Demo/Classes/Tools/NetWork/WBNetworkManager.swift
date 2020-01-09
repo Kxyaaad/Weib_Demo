@@ -36,6 +36,9 @@ class WBNetworkManager: AFHTTPSessionManager {
         
         //如果accessToken为nil,则直接返回
         guard userAccount.access_token != nil else { return
+            //通知进行登录
+            NotificationCenter.default.post(name: NSNotification.Name(WBUserShouldLoginNotification), object: "fe")
+            
             completion(nil, false)
         }
         //如果为nil，则新建一个字典
@@ -63,15 +66,20 @@ class WBNetworkManager: AFHTTPSessionManager {
                 if (task?.response as? HTTPURLResponse)?.statusCode == 403 {
                     print("token过期")
                 }
+                //通知进行登录
+                NotificationCenter.default.post(name: NSNotification.Name(WBUserShouldLoginNotification), object: "nil")
             
                 //失败回调
 //                print("错误信息",error)
                 completion(nil, false)
+                
             }
         default:
             post(URLString, parameters: parameter, progress: nil, success: { (URLSessionDataTask, json) -> () in
                 completion(json, true)
             }) { (URLSessionDataTask, error) in
+                //通知进行登录
+                NotificationCenter.default.post(name: NSNotification.Name(WBUserShouldLoginNotification), object: "nil")
                 completion(nil, false)
             }
         }
