@@ -14,7 +14,6 @@ class WBMessageViewController: WBBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        WBNetworkManager.shared.userAccount.access_token = "fmeo"
     }
     
 
