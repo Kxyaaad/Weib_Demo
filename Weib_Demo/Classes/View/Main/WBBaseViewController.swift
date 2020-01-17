@@ -26,7 +26,7 @@ class WBBaseViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("加载页面")
+//        print("加载页面")
         setUpUI()
         // Do any additional setup after loading the view.
         
@@ -40,7 +40,7 @@ class WBBaseViewController: UIViewController{
     }
     
     @objc private func login() {
-        print("登录")
+//        print("登录")
         //发送通知
         NotificationCenter.default.post(name: Notification.Name(WBUserShouldLoginNotification), object: nil)
     }
@@ -55,7 +55,7 @@ extension WBBaseViewController {
     
     //登录成功处理
     @objc private func loginSuccess(Noti: Notification) {
-        print("登录成功\(Noti)")
+//        print("登录成功\(Noti)")
         navigationItem.leftBarButtonItem = nil
         navigationItem.rightBarButtonItem = nil
         //更新UI => 将访客视图替换为表格视图
@@ -69,18 +69,18 @@ extension WBBaseViewController {
     
     
     @objc func setUpUI() {
-        print("加载页面2")
+//        print("加载页面2")
         view.backgroundColor = UIColor.cz_random()
-        print("是否登录",WBNetworkManager.shared.userLogon)
+//        print("是否登录",WBNetworkManager.shared.userLogon)
         isLogon = WBNetworkManager.shared.userLogon
         WBNetworkManager.shared.userLogon ? loadData(isPullup: false) : ()
         WBNetworkManager.shared.userLogon ? self.setTable() : self.setVisitorView()
-        print("加载页面3")
+//        print("加载页面3")
         
     }
     //添加表格视图
     @objc func setTable() {
-        print("加载tableview")
+//        print("加载tableview")
         tableView = UITableView(frame: CGRect(x: 0, y: UIApplication.shared.statusBarFrame.height + 44 , width: UIScreen.cz_screenWidth(), height: UIScreen.cz_screenHeight() - (UIApplication.shared.statusBarFrame.height + 44 + (tabBarController?.tabBar.frame.height)!)))
            tableView?.delegate = self
            tableView?.dataSource = self
@@ -96,7 +96,7 @@ extension WBBaseViewController {
     
     //添加访客视图
     @objc func setVisitorView() {
-        print("加载访客视图")
+//        print("加载访客视图")
         let visitorView = WBVisitorView(frame: view.bounds)
         view.addSubview(visitorView)
         //设置访客视图信息

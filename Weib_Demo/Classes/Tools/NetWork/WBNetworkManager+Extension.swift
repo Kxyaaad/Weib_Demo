@@ -49,10 +49,40 @@ extension WBNetworkManager {
             
             print(self.userAccount)
             //保存模型
-            self.userAccount.saveAccount()
             
-            //完成回调
-            completion(isSuccess)
+            
+            //加载当前用户的个人信息
+            self.loadUserInfo { (result) in
+                self.userAccount.yy_modelSet(with: result)
+                self.userAccount.saveAccount()
+                print("加载用户信息",self.userAccount)
+                //完成回调
+                completion(isSuccess)
+
+            }
+            
+            
+        }
+        
+    }
+}
+
+extension WBNetworkManager {
+    ///用户登录后立即执行
+    //加载用户信息
+    func loadUserInfo(completion: @escaping (_ dict:[String:Any]) -> ()) {
+        
+        guard let uid = userAccount.uid else { return }
+        
+        let urlString = "https://api.weibo.com/2/users/show.json"
+        
+        let params = ["uid":uid, "access_token":userAccount.access_token]
+        
+        //发起网络请求
+        
+        tokenRequest(Method: .GET, URLString: urlString, parameter: params as [String : Any]) { (result, isSuccess) in
+            ///完成回调
+            completion(result as! [String : Any])
         }
         
     }

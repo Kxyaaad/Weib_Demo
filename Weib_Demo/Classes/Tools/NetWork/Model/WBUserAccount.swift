@@ -16,6 +16,14 @@ class WBUserAccount: NSObject {
     ///用户代号
     @objc var uid: String?
     ///生命周期
+    
+    ///用户昵称
+    @objc var screen_name:String?
+    
+    ///用户大头像图地址 180*180
+    @objc var avatar_large:String?
+    
+    
     @objc var expires_in: TimeInterval = 0 {
         didSet{
             expiresDate = Date(timeIntervalSinceNow: expires_in)
@@ -37,6 +45,7 @@ class WBUserAccount: NSObject {
         //使用字典设置属性值
         let dict = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [String:Any]
         
+        ///用户是否登录的关键代码
         self.yy_modelSet(with: dict ?? [:])
         
         //判断 token 是否过期
@@ -67,7 +76,7 @@ class WBUserAccount: NSObject {
         //字典序列化
         guard let data = try? JSONSerialization.data(withJSONObject: dict, options: []), let fileName  = accountFile.cz_appendDocumentDir() else {return}
         
-        print("保存文件名", fileName)
+//        print("保存文件名", fileName)
         //写入磁盘
         (data as NSData).write(toFile: fileName, atomically: true)
     }

@@ -20,7 +20,6 @@ class WBMainViewController: UITabBarController {
         UIApplication.shared.applicationIconBadgeNumber = 4
         
         delegate = self
-        
         //注册通知
         NotificationCenter.default.addObserver(self, selector: #selector(userLogin(n:)), name: Notification.Name(WBUserShouldLoginNotification), object: nil)
     }
@@ -46,7 +45,7 @@ class WBMainViewController: UITabBarController {
     }
     
     @objc private func userLogin(n:Notification) {
-        print(n)
+//        print(n)
         if n.object != nil {
 //            SVProgressHUD.showError(withStatus: "登录身份过期，请重新登录")
             SVProgressHUD.showInfo(withStatus: "登录身份过期，请重新登录")
@@ -79,7 +78,7 @@ extension WBMainViewController:UITabBarControllerDelegate {
            
             vc.tableView?.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-                print("开始加载")
+//                print("开始加载")
                 vc.refreshControl?.beginRefreshing()
                 vc.loadData()
             }
@@ -116,7 +115,7 @@ extension WBMainViewController {
         //获取沙盒的文件路径
         let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         let jsonPath = (docDir as NSString).appendingPathComponent("main.json")
-        print("沙盒路径", jsonPath)
+//        print("沙盒路径", jsonPath)
         //加载data
         var data = NSData(contentsOfFile: jsonPath)
         

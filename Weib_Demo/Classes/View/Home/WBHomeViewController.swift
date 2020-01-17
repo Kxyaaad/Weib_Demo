@@ -46,6 +46,21 @@ extension WBHomeViewController {
         super.isLogon ? navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", target: self, action: #selector(showFriends)) : nil
        
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+        
+        setNavTitle()
+    }
+    
+    
+    private func setNavTitle() {
+        let btn = UIButton.cz_textButton("Kxy", fontSize: 17, normalColor: .darkGray, highlightedColor: .black)
+        btn?.setImage(UIImage?.init(UIImage(named: "navigationbar_arrow_down")!), for: .normal)
+        btn?.setImage(UIImage?.init(UIImage(named: "navigationbar_arrow_up")!), for: .selected)
+        navigationItem.titleView = btn
+        btn?.addTarget(self, action: #selector(clickTitleButton), for: .touchUpInside)
+    }
+    
+    @objc func clickTitleButton(btn: UIButton) {
+        btn.isSelected = !btn.isSelected
     }
 }
 
