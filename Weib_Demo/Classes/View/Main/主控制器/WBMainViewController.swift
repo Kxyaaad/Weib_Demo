@@ -16,6 +16,7 @@ class WBMainViewController: UITabBarController {
 
         setupChildControllers()
         setupComposeButton()
+        setupNewFeatureViews()
         self.tabBar.tintColor = UIColor.orange
         UIApplication.shared.applicationIconBadgeNumber = 4
         
@@ -161,4 +162,35 @@ extension WBMainViewController {
     }
     
     
+}
+
+/// MARK: - 新特性视图处理
+extension WBMainViewController {
+    private func setupNewFeatureViews() {
+        
+        //检查版本是否更新
+        
+        
+        // 如果更新，显示新特性，否则显示欢迎视图
+        let v = isNewVersion ? WBNewFeatureView() : WBWelcomView()
+        v.frame = view.bounds
+        // 添加视图
+        view.addSubview(v)
+        
+    }
+    /// extension中可以有计算型属性
+    private var isNewVersion:Bool {
+        
+        //1、取当前版本号
+        let currentVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+        //2、取保存在’Document（iTunes备份）‘目录中的之前版本号
+        let path: String = ("version" as NSString).cz_appendDocumentDir()
+        let sandboxVersion = try? String(contentsOfFile: path)
+        print( "本地版本",sandboxVersion, path)
+        
+        //3、将当前版本号保存在沙盒
+        try? currentVersion.write(toFile: path, atomically: true, encoding: .utf8)
+        
+        return currentVersion != sandboxVersion
+    }
 }

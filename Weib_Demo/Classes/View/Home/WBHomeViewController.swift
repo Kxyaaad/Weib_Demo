@@ -52,11 +52,9 @@ extension WBHomeViewController {
     
     
     private func setNavTitle() {
-        let btn = UIButton.cz_textButton("Kxy", fontSize: 17, normalColor: .darkGray, highlightedColor: .black)
-        btn?.setImage(UIImage?.init(UIImage(named: "navigationbar_arrow_down")!), for: .normal)
-        btn?.setImage(UIImage?.init(UIImage(named: "navigationbar_arrow_up")!), for: .selected)
+        let btn = WBTitleButton(title: WBNetworkManager.shared.userAccount.screen_name)
         navigationItem.titleView = btn
-        btn?.addTarget(self, action: #selector(clickTitleButton), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(clickTitleButton(btn:)), for: .touchUpInside)
     }
     
     @objc func clickTitleButton(btn: UIButton) {
