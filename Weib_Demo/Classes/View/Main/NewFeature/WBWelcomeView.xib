@@ -18,19 +18,28 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default_big" translatesAutoresizingMaskIntoConstraints="NO" id="q4F-3l-5kN">
-                    <rect key="frame" x="165" y="568" width="85" height="85"/>
+                    <rect key="frame" x="164.5" y="568" width="85" height="85"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="85" id="W3W-wk-RpX"/>
                         <constraint firstAttribute="width" constant="85" id="WWu-Ou-rkq"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wqp-Qu-xcr">
+                    <rect key="frame" x="189.5" y="697" width="35" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="wqp-Qu-xcr" firstAttribute="top" secondItem="q4F-3l-5kN" secondAttribute="bottom" constant="44" id="0Aj-Rx-DHE"/>
                 <constraint firstAttribute="bottom" secondItem="HoA-0n-ICq" secondAttribute="bottom" id="7mZ-OQ-pdZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="wqp-Qu-xcr" secondAttribute="bottom" constant="144" id="Inr-uX-9Uu"/>
                 <constraint firstItem="HoA-0n-ICq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="KQw-xh-8kg"/>
                 <constraint firstItem="HoA-0n-ICq" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Na8-1t-lgC"/>
                 <constraint firstItem="q4F-3l-5kN" firstAttribute="centerX" secondItem="HoA-0n-ICq" secondAttribute="centerX" id="aXI-Hh-r6X"/>
+                <constraint firstItem="wqp-Qu-xcr" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="pCO-Dt-n3C"/>
                 <constraint firstItem="q4F-3l-5kN" firstAttribute="top" secondItem="HoA-0n-ICq" secondAttribute="bottom" constant="-328" id="tPw-aF-d8u"/>
                 <constraint firstItem="HoA-0n-ICq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="xKj-lc-e8N"/>
             </constraints>
